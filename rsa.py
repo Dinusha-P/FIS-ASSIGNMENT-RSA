@@ -94,40 +94,39 @@ print("Public Key is:",public)
 print("\n")
  
 #Encryption
-def encrypt(pub_key,n_text):
+def encrypt(pub_key,plain_text):
     e,n=pub_key
-    x=[]
+    cipher_text=[]
     m=0
-    for i in n_text:
-        if(i.isupper()):
-            m = ord(i)-65
-            c=(m**e)%n
-            x.append(c)
-        elif(i.islower()):               
+    for i in plain_text:
+        if(i.islower()):               
             m= ord(i)-97
             c=(m**e)%n
-            x.append(c)
+            cipher_text.append(c)
+        elif(i.isupper()):
+            m = ord(i)-65
+            c=(m**e)%n
+            cipher_text.append(c)
         elif(i.isspace()):
-            spc=400
-            x.append(400)
-    return x
+            cipher_text.append(500)
+    return cipher_text
      
  
 #Decryption
-def decrypt(priv_key,c_text):
+def decrypt(priv_key,cipher_text):
     d,n=priv_key
-    txt=c_text.split(',')
-    x=''
+    txt=cipher_text.split(',')
+    plain_text=''
     m=0
     for i in txt:
-        if(i=='400'):
-            x+=' '
+        if(i=='500'):
+            plain_text+=' '
         else:
             m=(int(i)**d)%n
-            m+=65
+            m+=97   
             c=chr(m)
-            x+=c
-    return x
+            plain_text+=c
+    return plain_text
  
 
 #Choose Encryption or Decryption
@@ -145,4 +144,4 @@ while(1):
     elif(choose=='3'):
         exit(0)
     else:
-        print("You entered the wrong option.")
+        print("You entered the invalid option.")
