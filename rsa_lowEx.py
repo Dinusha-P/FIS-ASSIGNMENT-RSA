@@ -8,9 +8,6 @@ DATE: 21/11/2022
 
 import math
 import random
-
-#import Cryptography
-#from Crypto.Util.number import bytes_to_long 
  
 #Extended Euclidean Algorithm to find multiplicative inverse
 def gcdExtended(a,b):   
