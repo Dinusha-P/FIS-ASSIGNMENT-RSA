@@ -1,0 +1,17 @@
+SAMPLE INPUT FOR LOW EXPONENT ATTACK
+
+p		q
+input 1(for 4 char input)
+38231		52727
+51047		61681
+55529		33911
+
+input2 (for single char input)
+13		29
+17		23
+19		31
+
+input3(3 input char)
+38231		52727
+13		29
+55529		33911
