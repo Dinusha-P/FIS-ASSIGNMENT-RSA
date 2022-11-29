@@ -27,6 +27,8 @@ def binToDec(binary): #4bytes--binary
   return int(binary, 2)
 
 def decToBlockChar(deciList):
+  global msgAfter
+  msgAfter=[]
   global binaryBlock
   for deci in deciList:
       decMsg=''
@@ -48,6 +50,8 @@ def decToBlockChar(deciList):
 
 
 def encryptMsg(msg):
+    global encrypt
+    encrypt=[]
     global blocks
     global binaryblock
     for i in msg:
@@ -152,13 +156,6 @@ print("\n")
  
 #Encryption
 def encryption(pub_key,plain_text):
-    global blocksize,binaryblock,blocks
-    blocksize=2
-    binaryblock=''
-    blocks=0
-    encrypt=[]
-    decrypt=[]
-    msgAfter=[]
     e,n=pub_key
     cipher_text=[]
     encryptMsg(plain_text)
@@ -170,6 +167,7 @@ def encryption(pub_key,plain_text):
  
 #Decryption
 def decryption(priv_key,cipher_text):
+    decrypt=[]
     d,n=priv_key
     txt=cipher_text.split(',')
     for m in txt:
