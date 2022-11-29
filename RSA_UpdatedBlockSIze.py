@@ -156,7 +156,6 @@ def encryption(pub_key,plain_text):
     e,n=pub_key
     cipher_text=[]
     encryptMsg(plain_text)
-    print(encrypt)
     for m in encrypt:
       c=(int(m)**e)%n
       cipher_text.append(c)
@@ -170,7 +169,6 @@ def decryption(priv_key,cipher_text):
     for m in txt:
       c=(int(m)**d)%n
       decrypt.append(c)
-    print(decrypt)
     decToBlockChar(decrypt)
     return "".join(msgAfter)
  
