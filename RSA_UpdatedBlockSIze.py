@@ -12,7 +12,6 @@ import random
 blocksize=2
 binaryblock=''
 blocks=0
-msg1="hi *&&& Dinu How r u&"
 encrypt=[]
 decrypt=[]
 msgAfter=[]
@@ -153,6 +152,13 @@ print("\n")
  
 #Encryption
 def encryption(pub_key,plain_text):
+    global blocksize,binaryblock,blocks
+    blocksize=2
+    binaryblock=''
+    blocks=0
+    encrypt=[]
+    decrypt=[]
+    msgAfter=[]
     e,n=pub_key
     cipher_text=[]
     encryptMsg(plain_text)
